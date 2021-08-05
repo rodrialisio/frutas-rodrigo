@@ -1,0 +1,13 @@
+.item-counter-container {
+    text-align: center;
+}
+
+.count-total {
+    font-size: 2rem
+}
+
+.btn-primary {
+    margin: 5px;
+    width: 50px
+}
+

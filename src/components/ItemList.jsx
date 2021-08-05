@@ -1,12 +1,13 @@
 import "./ItemList.css"
 import React from "react"
 
-export default class ItemList extends React.Component {
-    render() {
-        return (
+export default function ItemList(props) {
+    return (
+        <div class="item-list">
             <div class="alert alert-primary" role="alert">
-                {this.props.greeting}
+                {props.greeting}
+                {props.children}
             </div>
-        )
-    }
+        </div>
+    )
 }
