@@ -1,0 +1,18 @@
+.item {
+    flex: 1 0 200px;
+    position: relative
+}
+
+.item-data-count {
+    position: absolute;
+    display:flex
+}
+
+.item-data {
+    color: white;
+}
+
+img {
+    width: 100%;
+    object-fit: contain;
+}

@@ -1,4 +1,11 @@
+.alert {
+    text-align: center;
+    font-size: xx-large;
+}
+
 .item-list {
     text-align: center;
     padding: 20px;
+    display:flex;
+    flex-wrap: wrap;
 }

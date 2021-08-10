@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react"
 import "./ItemCount.css"
-import NavBar from "./NavBar"
 
 export default function ItemCount() {
     const [count, setCount] = useState(0)
@@ -12,10 +11,10 @@ export default function ItemCount() {
     
     return(
         <div className="item-counter-container">
-            <div class="count-total">{count}</div>
+            <div class="count-total">{count} Kg</div>
             <div className="counter-buttons">
-                <button type="button" class="btn btn-primary" onClick={()=> setCount(count+1)}>+</button>
-                <button type="button" class="btn btn-primary" onClick={()=> setCount(count == 0? count -0 : count-1)}>-</button>
+                <button type="button" class="btn btn-secondary" onClick={()=> setCount(count+0.5)}>+</button>
+                <button type="button" class="btn btn-secondary" onClick={()=> setCount(count == 0? count -0 : count-0.5)}>-</button>
             </div>
             <div className="add-cart">
                 <button type="button" class="btn btn-secondary" onClick={()=> addToCart(0)}>

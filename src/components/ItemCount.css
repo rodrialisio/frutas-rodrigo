@@ -1,13 +1,27 @@
 .item-counter-container {
+    width: 100px;
     text-align: center;
+    padding: 5px;
 }
 
 .count-total {
-    font-size: 2rem
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
 }
 
-.btn-primary {
-    margin: 5px;
-    width: 50px
+.counter-buttons {
+    display: flex
+}
+
+.add-cart {
+    display: flex
+}
+
+.btn-secondary {
+    border-radius: 0%;
+    margin: 1px;
+    margin: 1px;
+    font-size: 0.8rem;
+    flex:1
 }
 
