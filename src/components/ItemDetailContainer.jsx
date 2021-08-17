@@ -4,12 +4,12 @@ import ItemDetail from "./ItemDetail.jsx"
 
 
 export default function ItemDetailContainer(props) {
-    const [oferta, setOferta]= useState([])
+    const [item, setItem]= useState([])
 
-    const getOferta = async ()=> {
+    const getItem = async ()=> {
         try {
             const respuesta= await setTimeout(()=> {
-                setOferta({
+                setItem({
                     foto: "./images/kiwis.png",
                     tipo:"Kiwis",
                     precio: 190
@@ -17,19 +17,19 @@ export default function ItemDetailContainer(props) {
             },2000)
     
         } catch(error) {
-            setOferta([])
+            setItem([])
         }
     }
 
-    console.log(oferta)
+    console.log(item)
 
     useEffect(()=> {
-        getOferta()
+        getItem()
     },[])
 
     return (
         <div className="item-detail-container"  >
-            <ItemDetail {...oferta} />
+            <ItemDetail {...item} />
         </div>
     )
 }
