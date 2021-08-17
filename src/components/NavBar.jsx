@@ -7,11 +7,8 @@ export default function NavBar() {
     return (
         <div className="navbar-container">
             <div className="navbar-brand-container">
-                <div className="navbar-brand-logo" >
-                    <FontAwesomeIcon icon={faLemon}/>
-                </div>
-                <div className="navbar-brand-name">
-                    frutas rodrigo
+                <div className="navbar-logo">
+                    <img className="logo" src="./images/logo.png" alt="" />
                 </div>
             </div>
             <div className="navbar-menu-container">

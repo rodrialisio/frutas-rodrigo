@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import React from "react";
+import SandBox from "./components/SandBox.jsx";
 
 function App() {
   return (
@@ -14,8 +15,5 @@ function App() {
 export default App;
 
 /* TO DO:
-meter foto en items
-ajustar tamaño de foto
 cambiar brand por una imagen
-styling navbar
 */

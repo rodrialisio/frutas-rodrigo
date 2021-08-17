@@ -1,6 +1,7 @@
 import "./ItemList.css"
 import React, { useState,useEffect } from "react"
 import Item from "./Item.jsx"
+import ItemDetailContainer from "./ItemDetailContainer.jsx"
 
 export default function ItemList(props) {
     const [products, setProducts]= useState([])
@@ -8,21 +9,29 @@ export default function ItemList(props) {
     useEffect(()=> {
         new Promise ((resolve,reject)=> {
             const data= [{
-                foto: "./images/manzanas.jpg",
+                foto: "./images/manzanas.png",
                 tipo: "Manzanas",
                 precio: 100
             },{
-                foto:"./images/naranjas.jpg",
-                tipo: "Naranja",
+                foto:"./images/naranjas.png",
+                tipo: "Naranjas",
                 precio: 80
             },{
-                foto:"./images/bananas.jpg",
+                foto:"./images/bananas.png",
                 tipo: "Bananas",
                 precio: 130
             },{
-                foto:"./images/peras.jpg",
+                foto:"./images/peras.png",
                 tipo: "Peras",
                 precio: 70
+            },{
+                foto:"./images/frutillas.png",
+                tipo: "Frutillas",
+                precio: 250
+            },{
+                foto:"./images/duraznos.png",
+                tipo: "Duraznos",
+                precio: 200
             }]
 
             setTimeout(()=> resolve(data),2000)
@@ -30,15 +39,19 @@ export default function ItemList(props) {
             setProducts(result)
         })
     },[])
-    
+
     return (
         <>
-            <div class="alert alert-success" role="alert">
-                {props.greeting}
+            <div className="oferta">
+                <h1>¡OFERTA!</h1>
+                <ItemDetailContainer/>
             </div>
-            <div className="item-list">
+            <div className="item-list row">
+                <h3>Nuestras frutas:</h3>
                 {products.map((cadaUno) => (
-                    <Item {...cadaUno} />
+                    <div className="col">
+                        <Item {...cadaUno} />
+                    </div>
                 ))}
             </div>
         </>        

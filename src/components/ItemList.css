@@ -3,9 +3,21 @@
     font-size: xx-large;
 }
 
-.item-list {
-    text-align: center;
-    padding: 20px;
+.oferta {
     display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-list {
+    padding: 20px;
     flex-wrap: wrap;
+}
+
+.col {
+    padding:0
+}
+
+h1 {
+    margin-right: 25px;
 }

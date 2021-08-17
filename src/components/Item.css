@@ -1,18 +1,14 @@
 .item {
-    flex: 1 0 200px;
-    position: relative
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(166, 255, 166);
+    height: 150px;
 }
 
-.item-data-count {
-    position: absolute;
-    display:flex
+.item-detail-count {
+    display: flex;
 }
 
-.item-data {
-    color: white;
+.item-detail{
+    flex:1
 }
 
-img {
-    width: 100%;
-    object-fit: contain;
-}
