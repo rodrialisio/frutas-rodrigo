@@ -1,19 +1,8 @@
 .item-detail {
-    text-align: center;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding:10px
-    
-}
-
-.item-background {
-    height: 125px;
-    flex:1
-}
-
-.item-info-wrapper {
-    align-items: center;
-    text-align: center;
-    flex:1
+    margin: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(167, 198, 255);
+    display:flex;
+    align-items: center
 }
