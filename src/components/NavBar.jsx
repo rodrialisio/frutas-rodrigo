@@ -3,11 +3,12 @@ import "./NavBar.css"
 import CartWidget from "./CartWidget"
 
 export default function NavBar() {
+
     return (
         <div className="navbar-container">
             <div className="navbar-brand-container">
                 <Link to="/" className="navbar-logo">
-                    <img className="logo" src="./images/logo.png" alt="" />
+                    <img className="logo" src="/images/logo.png" alt="" />
                 </Link>
             </div>
             <div className="navbar-menu-container">
@@ -21,9 +22,9 @@ export default function NavBar() {
                     <Link to="/category/:Contacto" className="navbar-contacto">CONTACTO</Link>
                 </div>
                 <div>
-                    <a className="cart-widget-container">
+                    <div className="cart-widget-container">
                         <CartWidget id="cart"/>
-                    </a>
+                    </div>
                 </div>  
             </div>
         </div>       

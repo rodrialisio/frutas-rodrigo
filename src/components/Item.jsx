@@ -6,9 +6,9 @@ export default function Item(props) {
     return (
         <div className="item">
             <div className="item-background-wrapper">
-                <img className="item-background" src={props.fotoB}/>
+                <img className="item-background" src={props.fotoB} alt=""/>
             </div>
-            <Link to={`/item/${props.tipo}`} className="item-info">
+            <Link to={`/item/${props.tipo}`} className="item-info" >
                 <div className="item-text-wrapper">
                     <h4>{props.tipo}</h4>
                 </div>

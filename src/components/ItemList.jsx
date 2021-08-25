@@ -19,7 +19,7 @@ export default function ItemList() {
             <div className="item-list row">
                 <h3>Nuestras frutas:</h3>
                 {products.map((cadaUno) => (
-                    <div className="col">
+                    <div className="col-sm-6 col-md-4">
                         <Item {...cadaUno} />
                     </div>
                 ))}

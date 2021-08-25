@@ -1,15 +1,20 @@
 import "./CartWidget.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
-import React, { Component,useState,useEffect } from "react"
+import React, {useEffect, useState} from "react"
+import { Link } from "react-router-dom"
 
 export default function CartWidget() {
     const [countCarrito, setCount] = useState(0)
 
+    useEffect(()=> {
+        setCount(0)
+    },[])
+
     return (
-        <a href="#" class="badge bg-secondary" onClick={() => alert("hiciste click en el carrito")}>
+        <Link to="/cart" className="badge bg-secondary">
             <FontAwesomeIcon icon={faShoppingCart}/>
-            <span class="badge bg-secondary">{countCarrito}</span>
-        </a>
+            <span className="badge bg-secondary">{countCarrito}</span>
+        </Link>
     )
 }

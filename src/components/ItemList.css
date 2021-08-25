@@ -14,7 +14,7 @@
     flex-wrap: wrap;
 }
 
-.col {
+.col-sm-6, .col-md-4 {
     padding:0
 }
 

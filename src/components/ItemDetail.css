@@ -1,7 +1,7 @@
 .item-detail {
     margin: 100px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: rgb(167, 198, 255);
     display:flex;
     align-items: center

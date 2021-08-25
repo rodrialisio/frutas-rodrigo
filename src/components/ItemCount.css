@@ -1,6 +1,7 @@
-.item-counter-container {
+.item-counter-container, .item-button-container {
     width: 100px;
     text-align: center;
+    text-decoration: none;
     padding: 5px;
 }
 
