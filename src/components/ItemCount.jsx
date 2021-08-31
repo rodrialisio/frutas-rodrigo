@@ -12,8 +12,6 @@ export default function ItemCount(props) {
     useEffect(()=> {
         setCount(0)
     },[])
-
-
     
     return(
         <>
