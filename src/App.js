@@ -1,17 +1,43 @@
 import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
-import Cart from "./components/Cart.jsx";
-import React from "react";
+import React, { useState } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
+import Cart from "./components/Cart.jsx";
 import { CartContext } from "./components/context/CartContext.jsx";
 import "./App.css"
 
-function App() { 
+export default function App() { 
+  const [compra,setCompra]=useState([])
+
+  const addItem= (fruta,imagen,kilos,costo) => { 
+    if (compra.find( item => item.tipo === fruta)) {
+      const repetido= compra.find( item => item.tipo === fruta)
+      repetido.cantidad += kilos
+      repetido.total += costo
+    } else {
+      compra.push({
+        tipo: fruta,
+        foto: imagen,
+        cantidad: kilos,
+        total: costo
+      })
+    }
+  }
+
+  const removeItem= (fruta) => {
+    setCompra(compra.filter(function(item){
+      return item.tipo !== fruta
+    }))
+  }
+
+  const clear = () => {
+    setCompra([])
+  }
 
   return (
     <div className="App">
-      <CartContext.Provider value={[]}>
+      <CartContext.Provider value={{compra,setCompra,addItem,removeItem,clear}}>
         <BrowserRouter>
           <NavBar/>
           <Switch>
@@ -33,6 +59,4 @@ function App() {
     </div>
   );
 }
-
-export default App;
 

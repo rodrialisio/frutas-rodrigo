@@ -1,10 +1,13 @@
 .item {
-    border: 3px solid rgb(255, 255, 255);
-    background-color: rgb(166, 255, 166);
+    border: 3px transparent;
     height: 150px;
     display: flex;
     align-items: center;
     padding: 10px;
+    margin: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .item-info {
@@ -28,3 +31,7 @@
     flex:1
 }
 
+h1 {
+    color: white;
+    margin:0px
+}

@@ -1,0 +1,39 @@
+.cart {
+    margin:50px;
+    flex-wrap: wrap;
+}
+
+.cart-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.cart-products {
+    display:flex;
+    justify-content: center;
+}
+
+.card {
+    color: white;
+    font-weight: bold;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-body{
+    text-align: center;
+    margin: 20px;
+    padding:0;
+}
+
+.btn-primary {
+    width:100px;
+    font-size:small;
+    border-radius: 0%;
+}

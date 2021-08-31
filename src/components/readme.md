@@ -1,9 +1,22 @@
 Pendiente:
-Carga simulada de items al navegar entre categorias (funciona al alternar con ItemDetail)
-Mejorar Style:
+-Deshabilitar addItem() sin props
+-Actualización de stock al colocar y quitar items
+
+Style:
     Foto de fondo
 
-Se muestra por consola el dato de cantidad pasado a ItemDetail desde Itemcount, utilizando una funcion de ItemDetail pasada por props a ItemCount.
-Al hacer click en "agregar al carrito" desaparece ItemCount y aparece el botón de "finalizar compra" 
+En esta entrega:
 
-que nos lleva a /:Cart
+> addItem() también verifica si el item es repetido como si fuese isInCart(). No se si sería mas intuitivo para el usuario que reemplace el primer valor ingresado por el segundo en vez de sumarse, como si se estuviese corrigiendo la cantidad deseada.
+
+> Se contabiliza el stock.
+
+
+
+
+
+
+
+
+
+

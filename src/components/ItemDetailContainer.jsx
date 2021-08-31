@@ -5,7 +5,7 @@ import { useParams } from "react-router"
 import {data} from "./Data.jsx"
 
 
-export default function ItemDetailContainer(props) {
+export default function ItemDetailContainer() {
     const params = useParams()
     const [item, setItem]= useState([])
 

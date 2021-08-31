@@ -4,13 +4,10 @@ import { Link } from "react-router-dom"
 
 export default function Item(props) {
     return (
-        <div className="item">
-            <div className="item-background-wrapper">
-                <img className="item-background" src={props.fotoB} alt=""/>
-            </div>
+        <div className="item" style={{backgroundImage: `url(${props.fotoB})`}}>
             <Link to={`/item/${props.tipo}`} className="item-info" >
                 <div className="item-text-wrapper">
-                    <h4>{props.tipo}</h4>
+                    <h1>{props.tipo}</h1>
                 </div>
             </Link>
         </div>       

@@ -1,3 +1,7 @@
+.item-list {
+    background-color: transparent;
+}
+
 .alert {
     text-align: center;
     font-size: xx-large;
@@ -10,7 +14,7 @@
 }
 
 .item-list {
-    padding: 20px;
+    padding: 40px;
     flex-wrap: wrap;
 }
 
@@ -20,4 +24,8 @@
 
 h1 {
     margin-right: 25px;
+}
+
+h3 {
+    color: white
 }
