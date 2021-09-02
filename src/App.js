@@ -10,18 +10,20 @@ import "./App.css"
 export default function App() { 
   const [compra,setCompra]=useState([])
 
-  const addItem= (fruta,imagen,kilos,costo) => { 
-    if (compra.find( item => item.tipo === fruta)) {
-      const repetido= compra.find( item => item.tipo === fruta)
+  const addItem= (fruta,imagen,kilos,costo) => {
+    const carrito= [...compra]
+    if (carrito.find( item => item.tipo === fruta)) {
+      const repetido= carrito.find( item => item.tipo === fruta)
       repetido.cantidad += kilos
       repetido.total += costo
     } else {
-      compra.push({
+      carrito.push({
         tipo: fruta,
         foto: imagen,
         cantidad: kilos,
         total: costo
       })
+    setCompra(carrito)
     }
   }
 

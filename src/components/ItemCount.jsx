@@ -23,7 +23,7 @@ export default function ItemCount(props) {
                 </div>
                 <div className="add-cart" >
                     <button type="button" className="btn btn-secondary" onClick={() => {
-                        if (props.tipo != undefined) {
+                        if (props.tipo != undefined && count > 0) {
                             addItem(props.tipo,props.fotoB,count,(count*props.precio))
                             setCount(0)
                             setDisplayBoton("block")
@@ -36,7 +36,7 @@ export default function ItemCount(props) {
             <div>
                 <Link to="/cart" className="item-button-container" style={{display:displayBoton}}>
                     <div className="add-cart">
-                        <button type="button" className="btn btn-secondary">
+                        <button type="button" className="btn btn-primary">
                             <h5>Terminar mi compra</h5>
                         </button>
                     </div>

@@ -1,6 +1,7 @@
 import "./Cart.css"
 import React, { useContext } from "react"
 import { CartContext } from "./context/CartContext"
+import { Link } from "react-router-dom"
 
 export default function Cart() {
 const {compra,removeItem,clear} = useContext(CartContext)
@@ -10,14 +11,25 @@ const {compra,removeItem,clear} = useContext(CartContext)
         return totalizador
     },0)
 
+    function carritoVacio() {
+        if (compra.length === 0) {
+            return  (
+                <div className="carrito-vacio">
+                    <h6>No hay productos en tu carrito...</h6>
+                    <Link to="/category/:Frutas" type="button" className="btn btn-secondary">
+                        <h6>Volver a Frutas</h6>
+                    </Link>
+                </div>
+            )
+        }
+    }
+
     return (
         <div className="cart">
             <div className="cart-header">
                 <h2>Carrito de compras</h2>
                 <h5>Total: ${total} </h5>
-                <div className="button-wrapper">
-                    <a className="btn btn-primary" onClick={()=> clear()} >Vaciar carrito</a>
-                </div>
+                {carritoVacio()}
             </div>
             <div className="cart-products">
                 {compra.map((item)=> (
@@ -31,7 +43,9 @@ const {compra,removeItem,clear} = useContext(CartContext)
                     </div>
                 ))}
             </div>
-            
+            <div className="button-wrapper">
+                <a className="btn btn-primary" onClick={()=> clear()} style={{display: compra.length > 0 ? "block" : "none"}}>Vaciar carrito</a>
+            </div>
         </div>
     )
 }
