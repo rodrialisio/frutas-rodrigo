@@ -4,6 +4,10 @@ import CartWidget from "./CartWidget"
 
 export default function NavBar() {
 
+    const premium= {
+        categoria: "premium"
+    }
+
     return (
         <div className="navbar-container">
             <div className="navbar-brand-container">
@@ -19,7 +23,7 @@ export default function NavBar() {
                     <Link to="/category/:Frutas" className="navbar-promos">FRUTAS</Link>
                 </div>
                 <div>
-                    <Link to="/category/:Contacto" className="navbar-contacto">CONTACTO</Link>
+                    <Link to={`/premium/${premium.categoria}`} className="navbar-contacto">PREMUIM</Link>
                 </div>
                 <div>
                     <div className="cart-widget-container">

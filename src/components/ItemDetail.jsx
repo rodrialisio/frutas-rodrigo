@@ -1,8 +1,8 @@
 import "./ItemDetail.css"
-import React, { useContext } from "react"
+import React from "react"
 import ItemCount from "./ItemCount"
 
-export default function ItemDetail(props) {    
+export default function ItemDetail(props) {
 
     return (
         <>

@@ -1,27 +1,40 @@
 import "./Cart.css"
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { CartContext } from "./context/CartContext"
 import { Link } from "react-router-dom"
+import { faCompressArrowsAlt } from "@fortawesome/free-solid-svg-icons"
 
 export default function Cart() {
-const {compra,removeItem,clear} = useContext(CartContext)
+    const [order,setOrder]= useState([])
+    const {compra,removeItem,clear} = useContext(CartContext)
 
     var total= compra.reduce((suma, item)=> {
         var totalizador = suma+item.total
         return totalizador
     },0)
 
-    function carritoVacio() {
-        if (compra.length === 0) {
+    function comprar() {}
+
+    function carritoLleno() {
+        if (compra.length > 0) {
             return  (
-                <div className="carrito-vacio">
-                    <h6>No hay productos en tu carrito...</h6>
-                    <Link to="/category/:Frutas" type="button" className="btn btn-secondary">
-                        <h6>Volver a Frutas</h6>
-                    </Link>
+                <div className="boton-comprar">
+                    <button type="button" className="btn btn-success" onClick={comprar()} >
+                        <h6>Comprar!</h6>
+                    </button>
                 </div>
             )
-        }
+        } else return compra.length === 0? <h6>No hay productos en tu carrito...</h6> : <></>
+    }
+
+    function volver() {
+        return  (
+            <div className="carrito-vacio">
+                <Link to="/category/:Frutas" type="button" className="btn btn-secondary">
+                    <h6>Volver a Frutas</h6>
+                </Link>
+            </div>
+        )
     }
 
     return (
@@ -29,7 +42,8 @@ const {compra,removeItem,clear} = useContext(CartContext)
             <div className="cart-header">
                 <h2>Carrito de compras</h2>
                 <h5>Total: ${total} </h5>
-                {carritoVacio()}
+                {carritoLleno()}
+                {volver()}
             </div>
             <div className="cart-products">
                 {compra.map((item)=> (

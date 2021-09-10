@@ -1,13 +1,15 @@
 import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
-import React, { useState } from "react";
+import PremiumList from "./components/PremiumList.jsx"
+import React, { useState, useEffect } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Cart from "./components/Cart.jsx";
 import { CartContext } from "./components/context/CartContext.jsx";
+import {getData} from "./firebase"
 import "./App.css"
 
-export default function App() { 
+export default function App() {
   const [compra,setCompra]=useState([])
 
   const addItem= (fruta,imagen,kilos,costo) => {
@@ -39,7 +41,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <CartContext.Provider value={{compra,setCompra,addItem,removeItem,clear}}>
+      <CartContext.Provider value={{compra,setCompra,addItem,removeItem,clear,getData}}>
         <BrowserRouter>
           <NavBar/>
           <Switch>
@@ -48,6 +50,9 @@ export default function App() {
             </Route>
             <Route exact path="/category/:tipo">
               <ItemListContainer/>
+            </Route>
+            <Route exact path="/premium/:categoria">
+              <PremiumList/>
             </Route>
             <Route exact path="/item/:tipo">
               <ItemDetailContainer/>
