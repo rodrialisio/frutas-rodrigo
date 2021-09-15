@@ -17,10 +17,10 @@ export default function NavBar() {
             </div>
             <div className="navbar-menu-container">
                 <div>
-                    <Link to="/category/:Home" className="navbar-home">HOME</Link>
+                    <Link to="/category/Home" className="navbar-home">HOME</Link>
                 </div>
                 <div>
-                    <Link to="/category/:Frutas" className="navbar-promos">FRUTAS</Link>
+                    <Link to="/category/Frutas" className="navbar-promos">FRUTAS</Link>
                 </div>
                 <div>
                     <Link to={`/premium/${premium.categoria}`} className="navbar-contacto">PREMUIM</Link>

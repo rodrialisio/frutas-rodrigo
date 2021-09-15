@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import PremiumList from "./components/PremiumList.jsx"
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Cart from "./components/Cart.jsx";
 import { CartContext } from "./components/context/CartContext.jsx";

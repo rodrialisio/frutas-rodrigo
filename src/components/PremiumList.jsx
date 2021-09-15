@@ -1,9 +1,8 @@
 import React from "react";
 import { useState,useEffect} from "react";
 import { useParams } from "react-router";
-import { query, where } from "@firebase/firestore";
 import { getData } from "../firebase";
-import { collection,getDocs,} from "@firebase/firestore";
+import { collection,getDocs,query,where} from "@firebase/firestore";
 import Item from "./Item";
 
 
