@@ -1,0 +1,20 @@
+.loading {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin:200px;
+    text-align: center;
+    align-items: center;
+}
+
+.form{
+    color: White;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 2%;
+}
+
+h2 {
+    opacity: 100%;
+    text-align: center;
+    height:min-content
+}

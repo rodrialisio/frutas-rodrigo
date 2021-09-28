@@ -6,10 +6,10 @@ import { useContext} from "react"
 import { CartContext } from "./context/CartContext"
 
 export default function CartWidget() {
-    const {compra} = useContext(CartContext)
+    const {compra,setFormulario} = useContext(CartContext)
 
     return (
-        <Link to="/cart" className="badge bg-primary" style={{display: compra.length > 0 ? "block" : "none"}} >
+        <Link to="/cart" className="badge bg-success" style={{display: compra.length > 0 ? "block" : "none"}} onClick={()=> setFormulario("none")}>
             <FontAwesomeIcon icon={faShoppingCart}/>
             <span className="badge bg-secondary">{compra.length}</span>
         </Link>

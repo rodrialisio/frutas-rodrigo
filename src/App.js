@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx";
 import ItemDetailContainer from "./components/ItemDetailContainer.jsx";
 import PremiumList from "./components/PremiumList.jsx"
+import Contact from "./components/Contact.jsx";
 import React, { useState} from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Cart from "./components/Cart.jsx";
@@ -11,6 +12,7 @@ import "./App.css"
 
 export default function App() {
   const [compra,setCompra]=useState([])
+  const [formulario,setFormulario]= useState("none")
 
   const addItem= (fruta,imagen,kilos,costo) => {
     const carrito= [...compra]
@@ -25,8 +27,8 @@ export default function App() {
         cantidad: kilos,
         total: costo
       })
-    setCompra(carrito)
     }
+    setCompra(carrito)
   }
 
   const removeItem= (fruta) => {
@@ -41,7 +43,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <CartContext.Provider value={{compra,setCompra,addItem,removeItem,clear,getData}}>
+      <CartContext.Provider value={{compra,setCompra,formulario,setFormulario,addItem,removeItem,clear,getData}}>
         <BrowserRouter>
           <NavBar/>
           <Switch>
@@ -59,6 +61,9 @@ export default function App() {
             </Route>
             <Route exact path="/cart">
               <Cart/>
+            </Route>
+            <Route exact path="/contacto">
+              <Contact/>
             </Route>
           </Switch>
         </BrowserRouter>

@@ -1,9 +1,8 @@
-.item-list-container {
+.premium-list-wrapper {
     position: fixed;
-    height: 100%;
-    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    max-height: max-content;
+    height: 100%;
+    width: 100%;
 }

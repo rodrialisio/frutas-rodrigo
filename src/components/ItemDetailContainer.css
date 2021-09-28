@@ -1,4 +1,15 @@
+.item-detail-wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: max-content;
+    height:100%;
+    width:100%;
+    position:fixed
+}
+
 .item-detail-container {
+    padding:100px;
     height:100%;
 }
 

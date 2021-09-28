@@ -1,10 +1,14 @@
 .item-detail {
-    margin: 100px;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgb(167, 198, 255);
     display:flex;
-    align-items: center
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+}
+
+h1, h2 {
+    color:white
 }

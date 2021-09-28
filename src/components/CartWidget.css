@@ -1,8 +1,12 @@
 
-.bg-primary {
+.bg-success {
     padding: 5px;
     margin: 10px;
     font-size: 1.2rem;
+}
+
+.bg-success:hover {
+    color: white
 }
 
 .bg-secondary {
