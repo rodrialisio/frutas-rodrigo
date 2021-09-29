@@ -5,9 +5,11 @@ import { CartContext } from "./context/CartContext"
 import { Link } from "react-router-dom"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faShoppingCart} from "@fortawesome/free-solid-svg-icons"
+import { useSpring, animated } from "react-spring"
 
 export default function Cart() {
     const {compra,formulario,setFormulario,removeItem,clear} = useContext(CartContext)
+    const entrada = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
 
     useEffect(()=> {   
         setFormulario("none")
@@ -41,34 +43,36 @@ export default function Cart() {
     }
 
     return (
-        <div className="cart-wrapper" style={{backgroundImage: "url(/images/madera.jpg)"}} >
-            <div className="form-container" style= {{display: formulario}} >
-                <Form total={total}/>
-            </div>
-            <div className="cart" >
-                <div className="cart-header">
-                    <h2><FontAwesomeIcon icon={faShoppingCart}/>   Carrito de compras</h2>
-                    <h5>Total: ${total} </h5>
-                    {carritoLleno()}
-                    {volver()}
-                </div>
-                <div className="cart-products">
-                    {compra.map((item)=> (
-                        <div className="card" style={{width: "10rem", margin:"20px", backgroundImage: `url(${item.foto})`}}>
-                            <div className="card-body">
-                                <h5 className="card-title">{item.tipo}</h5>
-                                <p className="card-text">{item.cantidad}Kg</p>
-                                <p className="card-text">${item.total}</p>
-                                <a href="#" className="btn btn-primary" onClick={()=> removeItem(item.tipo)}>Quitar del carrito</a>
-                            </div>
+            <div className="cart-wrapper" style={{backgroundImage: "url(https://firebasestorage.googleapis.com/v0/b/frutas-rodrigo.appspot.com/o/madera.jpg?alt=media&token=15b35702-60bb-448e-bade-0ee31fa7cc83)"}} >
+                <animated.div style={entrada}>
+                    <div className="form-container" style= {{display: formulario}} >
+                        <Form total={total}/>
+                    </div>
+                    <div className="cart" >
+                        <div className="cart-header">
+                            <h2><FontAwesomeIcon icon={faShoppingCart}/>   Carrito de compras</h2>
+                            <h5>Total: ${total} </h5>
+                            {carritoLleno()}
+                            {volver()}
                         </div>
-                    ))}
-                </div>
-                <div className="button-wrapper">
-                    <a className="btn btn-primary" onClick={()=> clear()} style={{display: compra.length > 0 ? "block" : "none"}}>Vaciar carrito</a>
-                </div>
+                        <div className="cart-products">
+                            {compra.map((item)=> (
+                                <div className="card" style={{width: "10rem", margin:"20px", backgroundImage: `url(${item.foto})`}}>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{item.tipo}</h5>
+                                        <p className="card-text">{item.cantidad}Kg</p>
+                                        <p className="card-text">${item.total}</p>
+                                        <a href="#" className="btn btn-primary" onClick={()=> removeItem(item.tipo)}>Quitar del carrito</a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="button-wrapper">
+                            <a className="btn btn-primary" onClick={()=> clear()} style={{display: compra.length > 0 ? "block" : "none"}}>Vaciar carrito</a>
+                        </div>
+                    </div>
+                </animated.div>
             </div>
-        </div>
     )
 }
 

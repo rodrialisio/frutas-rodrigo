@@ -8,7 +8,6 @@ import { query, where } from "@firebase/firestore"
 import { getData } from "../firebase";
 import { Link } from "react-router-dom"
 
-
 export default function ItemDetailContainer() {
     const params = useParams()
     const [fruta, setFruta]= useState([])
@@ -25,7 +24,7 @@ export default function ItemDetailContainer() {
 
     return (
         <>
-            <div className="item-detail-wrapper" style={{backgroundImage: "url(/images/madera.jpg)"}} >
+            <div className="item-detail-wrapper" style={{backgroundImage: "url(https://firebasestorage.googleapis.com/v0/b/frutas-rodrigo.appspot.com/o/madera.jpg?alt=media&token=15b35702-60bb-448e-bade-0ee31fa7cc83)"}} >
                 <div>
                     <Loading {...fruta} />
                 </div>

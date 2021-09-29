@@ -14,7 +14,7 @@ export default function Form(props) {
     const [telefono,setTelefono]= useState("")
     const [email, setEmail]= useState("")
     const [emailCheck, setEmailCheck]= useState("")
-    const {compra,setCompra, formulario, setFormulario} = useContext(CartContext)
+    const {compra,setCompra, setFormulario} = useContext(CartContext)
 
     async function comprar() {
         if (email===emailCheck && nombre && apellido && email && emailCheck && telefono) {
@@ -39,7 +39,6 @@ export default function Form(props) {
             .then((response) => {
                 console.log(response.id)
                 setOrderId(response.id)
-                console.log(orderId)
                 alert(`Tu orden fue enviada exitosamente! \n Código de compra: ${response.id} \n Te enviaremos un e-mail de confirmación con los detalles de tu pedido.`)
                 setCompra([])
             })

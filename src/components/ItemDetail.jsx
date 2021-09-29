@@ -1,11 +1,13 @@
 import "./ItemDetail.css"
 import React from "react"
 import ItemCount from "./ItemCount"
+import { useSpring, animated } from "react-spring"
 
 export default function ItemDetail(props) {
+    const entrada = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
 
     return (
-        <>
+        <animated.div style={entrada}>
             <div className="item-detail">
                 <div className="item-background-wrapper">
                     <img className="item-background" src={props.fotoB} alt="..."/> 
@@ -18,6 +20,6 @@ export default function ItemDetail(props) {
                 </div>
                 <ItemCount {...props}/>
             </div>
-        </>       
+        </animated.div>       
     )
 }

@@ -12,7 +12,7 @@ export default function NavBar() {
         <div className="navbar-container">
             <div className="navbar-brand-container">
                 <Link to="/" className="navbar-logo">
-                    <img className="logo" src="/images/logo.png" alt="" />
+                    <img className="logo" src="https://firebasestorage.googleapis.com/v0/b/frutas-rodrigo.appspot.com/o/logo.png?alt=media&token=c325dd1e-a4a0-4ef7-8199-a4f1e497a395" alt="" />
                 </Link>
             </div>
             <div className="navbar-menu-container">
@@ -34,7 +34,6 @@ export default function NavBar() {
                         <CartWidget id="cart"/>
                     </div>
                 </div>
-                 
             </div>
         </div>       
     )

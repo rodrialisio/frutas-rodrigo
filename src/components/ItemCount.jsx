@@ -18,7 +18,7 @@ export default function ItemCount(props) {
             <div className="item-counter-container" style= {{display: displayBoton==="none"? "block" : "none"}}>
                 <div className="count-total">{count} Kg</div>
                 <div className="counter-buttons">
-                    <button type="button" className="btn btn-secondary" onClick={()=> setCount(count+0.5)}><h4>+</h4></button>
+                    <button type="button" className="btn btn-secondary" onClick={()=> setCount(count < props.stock? count+0.5 : count+0)}><h4>+</h4></button>
                     <button type="button" className="btn btn-secondary" onClick={()=> setCount(count === 0? count -0 : count-0.5)}><h4>-</h4></button>
                 </div>
                 <div className="add-cart" >
@@ -49,7 +49,6 @@ export default function ItemCount(props) {
                     </div>
                 </Link>
             </div>
-            
         </>
     )
 }
